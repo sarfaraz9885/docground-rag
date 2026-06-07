@@ -1,5 +1,10 @@
 # DocGround — Document-Grounded RAG with Faithfulness Evaluation
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sarfaraz9885-docground-rag-app-jyqlth.streamlit.app/)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
+
+**🔗 Live demo:** https://sarfaraz9885-docground-rag-app-jyqlth.streamlit.app/
+
 A retrieval-augmented question-answering system that answers questions **only** from a
 provided document set, returns **citations** for every answer, and **scores its own
 faithfulness** to flag hallucinations.
@@ -24,7 +29,10 @@ faithfulness** to flag hallucinations.
 | API | FastAPI + Uvicorn (optional) |
 | UI | Streamlit (runs the pipeline in-process) |
 
-> `runtime.txt` pins Streamlit Community Cloud to Python 3.12 so local and cloud match.
+> **Python version:** this stack is tested on **3.12**. A `runtime.txt` is included, but
+> Streamlit Community Cloud currently ignores it ([known issue](https://github.com/streamlit/streamlit/issues/15326))
+> — so you must pick **Python 3.12** in the deploy dialog's *Advanced settings* (see below).
+> Don't deploy on 3.14: some compiled dependencies may lack 3.14 wheels, and you gain nothing.
 
 ## Setup
 
@@ -71,7 +79,10 @@ python eval/run_eval.py
    local store to upload — only code).
 2. On [share.streamlit.io](https://share.streamlit.io), create an app pointing at
    `app.py` on your branch.
-3. In **App → Settings → Secrets**, paste your keys in TOML form:
+3. Open **Advanced settings** and **select Python 3.12** (the version can't be
+   changed after deploy — you'd have to delete and redeploy). `runtime.txt` is
+   currently ignored by Cloud, so this dropdown is the reliable control.
+4. Still in **Advanced settings → Secrets**, paste your keys in TOML form:
 
    ```toml
    OPENAI_API_KEY = "sk-..."
@@ -84,7 +95,7 @@ python eval/run_eval.py
 
    `app.py` copies these into the environment at startup, so `src/config.py`
    reads them exactly as it reads `.env` locally.
-4. Make sure the Pinecone index has already been populated (run `python -m src.ingest`
+5. Make sure the Pinecone index has already been populated (run `python -m src.ingest`
    locally once against the same index).
 
 ## Repo structure
