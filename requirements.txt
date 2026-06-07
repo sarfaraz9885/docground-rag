@@ -1,0 +1,33 @@
+# --- DocGround RAG: pinned for Python 3.12 (NOT 3.14 — see README) ---
+
+# Orchestration: splitters, retrievers, prompt templates
+langchain==0.3.27
+langchain-core==0.3.79
+langchain-community==0.3.31           # document loaders (PyPDFLoader, TextLoader)
+langchain-text-splitters==0.3.11      # RecursiveCharacterTextSplitter
+langchain-openai==0.3.35              # OpenAI embeddings + chat models
+langchain-anthropic==0.3.22           # optional: Claude as the LLM
+langchain-pinecone==0.2.13            # Pinecone vector store integration (langchain-core 0.3 compatible)
+
+# Vector store (Pinecone serverless — managed, cloud-hosted)
+pinecone==7.3.0
+
+# Embeddings / LLM provider SDKs
+openai==2.6.1
+anthropic==0.75.0
+
+# Document loading
+pypdf==6.1.3                          # PyPDFLoader backend
+
+# API
+fastapi==0.120.4
+uvicorn[standard]==0.40.0
+
+# UI
+streamlit==1.51.0
+
+# Eval harness / misc
+python-dotenv==1.2.1                  # load API keys from .env
+pydantic==2.12.4                      # typed request/response models
+tabulate==0.9.0                       # scorecard tables
+requests==2.32.5                      # app.py / run_eval.py -> API calls

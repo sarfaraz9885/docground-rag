@@ -1,0 +1,107 @@
+[
+  {
+    "id": "q01",
+    "question": "What is Retrieval-Augmented Generation (RAG)?",
+    "answerable": true,
+    "expected_source": "sample_rag_notes.md",
+    "note": "Definition is stated directly in the notes."
+  },
+  {
+    "id": "q02",
+    "question": "What chunk size and overlap does the guidance recommend?",
+    "answerable": true,
+    "expected_source": "sample_rag_notes.md",
+    "note": "Around 800 characters with ~120 overlap."
+  },
+  {
+    "id": "q03",
+    "question": "Why is overlap used when chunking documents?",
+    "answerable": true,
+    "expected_source": "sample_rag_notes.md",
+    "note": "Keeps boundary-straddling sentences in context."
+  },
+  {
+    "id": "q04",
+    "question": "What is semantic search and why is it called that?",
+    "answerable": true,
+    "expected_source": "sample_rag_notes.md",
+    "note": "Matches meaning rather than exact keywords."
+  },
+  {
+    "id": "q05",
+    "question": "How is each chunk turned into something that can be searched?",
+    "answerable": true,
+    "expected_source": "sample_rag_notes.md",
+    "note": "Converted to a dense vector by an embedding model."
+  },
+  {
+    "id": "q06",
+    "question": "What does it mean for an answer to be faithful?",
+    "answerable": true,
+    "expected_source": "sample_rag_notes.md",
+    "note": "Every claim is supported by the retrieved context."
+  },
+  {
+    "id": "q07",
+    "question": "What is a hallucination according to these notes?",
+    "answerable": true,
+    "expected_source": "sample_rag_notes.md",
+    "note": "Any claim not supported by the provided sources."
+  },
+  {
+    "id": "q08",
+    "question": "When should a document-grounded system refuse to answer?",
+    "answerable": true,
+    "expected_source": "sample_rag_notes.md",
+    "note": "When the context does not contain the information."
+  },
+  {
+    "id": "q09",
+    "question": "What form do citations take in DocGround?",
+    "answerable": true,
+    "expected_source": "sample_rag_notes.md",
+    "note": "[source, page]."
+  },
+  {
+    "id": "q10",
+    "question": "What two components does RAG combine?",
+    "answerable": true,
+    "expected_source": "sample_rag_notes.md",
+    "note": "A retriever and a generator."
+  },
+  {
+    "id": "q11",
+    "question": "Who won the 2022 FIFA World Cup?",
+    "answerable": false,
+    "expected_source": null,
+    "note": "Not in the corpus — should refuse."
+  },
+  {
+    "id": "q12",
+    "question": "What is the capital of Australia?",
+    "answerable": false,
+    "expected_source": null,
+    "note": "Not in the corpus — should refuse."
+  },
+  {
+    "id": "q13",
+    "question": "What was OpenAI's total revenue in 2024?",
+    "answerable": false,
+    "expected_source": null,
+    "note": "Not in the corpus — should refuse."
+  },
+  {
+    "id": "q14",
+    "question": "How do I fine-tune a Llama 3 model with LoRA?",
+    "answerable": false,
+    "expected_source": null,
+    "note": "Not in the corpus — should refuse."
+  },
+  {
+    "id": "q15",
+    "question": "What are Pinecone's paid pricing tiers?",
+    "answerable": false,
+    "expected_source": null,
+    "note": "Not in the corpus — should refuse."
+  }
+]

@@ -1,0 +1,34 @@
+# --- Secrets: NEVER commit ---
+.env
+.env.*
+!.env.example
+
+# --- Vector store ---
+# Pinecone is cloud-hosted, so there's nothing local to ignore.
+# (Legacy local Chroma dir, kept ignored in case any old data lingers.)
+chroma_db/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- Runtime artifacts ---
+*.log
+*.pid
+
+# --- IDE / OS / tooling ---
+.idea/
+.vscode/
+.claude/
+.DS_Store
+Thumbs.db
+
+# NOTE: eval/results.md is intentionally NOT ignored — commit it as
+# portfolio proof of the evaluation scorecard.
